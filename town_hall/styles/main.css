@@ -2,6 +2,9 @@
 :root {
 	--accent-color: #800000;  /* could also be coded #800 */
 	--gradient-color: #f6bb73;
+	--light-menu-color: white;
+	--mid-menu-color: antiquewhite;
+	--dark-menu-color: #800000;
 }
 
 /* reset */
@@ -61,6 +64,56 @@ header {
 		float: left;
 		margin: .75em 1em;
 	}
+}
+
+.navbar {
+	background-color: var(--accent-color);
+	& a {
+		display: block;
+		padding: 1em;
+		text-decoration: none;
+		color: var(--light-menu-color);
+		margin: 0 1px 2px 1px;
+	}
+	& a:hover,
+	& a:focus,
+	& .current {
+		background-color: var(--mid-menu-color);
+		color: var(--dark-menu-color);
+	}
+	& ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+}
+
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+	& > li {
+		flex-basis: 20%;
+		text-align: center;
+	}
+}
+
+.submenu {
+	color: var(--light-menu-color);
+	display: none;
+	& > li a {
+		margin: 0 2px 2px;
+	}
+}
+
+.menu > li:hover .submenu {
+	display: block;
+}
+
+.menu > li:first-child a {
+	margin-left: 0;
+}
+.menu > li:last-child a {
+	margin-right: 0;
 }
 
 /* the styles for the main content */
